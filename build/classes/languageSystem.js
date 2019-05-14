@@ -1,6 +1,6 @@
  class LanguageSystem{
-    constructor(_language){
-        language = _language;
+    constructor(_language = undefined){
+        this.language = _language;
     }
 
     translate(text){
@@ -23,8 +23,8 @@
         if(text === 'Player '){
             return 'Jugador ';
         }
-        if(text === 'won!'){
-            return 'ganó!';
+        if(text === ' won!'){
+            return ' ganó!';
         }
         if(text === 'Health: '){
             return 'Vida: ';
