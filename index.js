@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+const LanguageSystem = require('./build/classes/languageSystem')
 
 var game = process.argv[2];
 var language = process.argv[3];
@@ -16,6 +17,8 @@ if (!game) {
   console.log('- es : Español');
   return;
 }
+
+global.translator = new LanguageSystem(language);
 
 require('babel-polyfill');
 
