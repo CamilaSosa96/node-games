@@ -60,7 +60,7 @@ function loop() {
     gameover();
   }
 
-  ui.cursor.goto(0, 0).yellow().write('Score: ' + score);
+  ui.cursor.goto(0, 0).yellow().write(translator.translate('Score: ') + score);
   ui.cursor.reset();
 
   setTimeout(loop, FRAME);
@@ -161,7 +161,7 @@ function createPart() {
 }
 
 function gameover() {
-  var MSG = 'Game Over!';
+  var MSG = translator.translate('Game Over!');
   ui.cursor.goto(ui.center.x - MSG.length / 2, ui.center.y);
   ui.cursor.red();
   ui.cursor.bold();
@@ -169,7 +169,7 @@ function gameover() {
 
   ui.cursor.reset();
   ui.cursor.hex('#f65590');
-  var RETRY = 'Press any key to play again';
+  var RETRY = translator.translate('Press any key to play again');
   ui.cursor.goto(ui.center.x - RETRY.length / 2, ui.center.y + 2);
   ui.write(RETRY);
 
